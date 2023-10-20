@@ -23,6 +23,13 @@ app.use(express.json());
 //Usando a la variable Importada 'routes' -> Contiene el valor agregado en 'routes.js'
 app.use(routes);
 
+// next es una Función CallBack, el err es el Error que se enviará a cada ruta en caso algo salga mal
+app.use((err, req, res, next) => {
+    return res.json({
+        message: err.message
+    });
+});
+
 //Esto es para iniciar el servidor web y escuchar las Solicitudes entrantes por el Puerto
 app.listen(port, () => {
     console.log(`Servidor ejecutándose en http://localhost:${port}`);

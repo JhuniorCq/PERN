@@ -23,18 +23,13 @@ const {
 */
 router.get('/tasks', obtenerTodasTareas);//Solo llamo a la función que ya se definió en controller.js
 
-router.get('/tasks/10', obtenerUnaTarea);
+router.get('/tasks/:id', obtenerUnaTarea);//El :id indica que ahí va un valor, pero aún no sabemos qué valor será. Esto se puede entender como un parámetro v:
 
 router.post('/tasks', crearTarea);
 
-router.delete('/tasks', eliminarTarea);
+router.delete('/tasks/:id', eliminarTarea);//El :id indica que ahí va un valor, pero aún no sabemos qué valor será. Esto se puede entender como un parámetro v: (Ese id puede tomar cualquier otro nombre v:)
 
-router.put('/tasks', modificarTarea);
-
-
-
-
-
+router.put('/tasks/:id', modificarTarea);//El :id indica que ahí va un valor, pero aún no sabemos qué valor será. Esto se puede entender como un parámetro v:
 
 
 //Exportamos la variable 'router' que AHORA ya NO está vacía
