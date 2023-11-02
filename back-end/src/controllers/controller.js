@@ -5,7 +5,7 @@ const pool = require('../db');
 
 const holaMundito = async (req, res) => {
     try {
-        res.send("Hola Mundo :D");
+        res.send("Hola Mundoooooooooooooooooo :D");
     }
     catch (err) {
         throw err;
