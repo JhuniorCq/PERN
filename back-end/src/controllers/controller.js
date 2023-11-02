@@ -7,7 +7,8 @@ const obtenerTodasTareas = async (req, res) => {//Solicitud para obtener algo (r
 
     try{
         const resultado = await pool.query('SELECT * FROM task');   //Con esto OBTENDREMOS lo que está siendo guardado en la Base de Datos
-        res.json(resultado.rows);   //Con esto convertiremos en un JSON todo lo que está siendo guardado en la BD, para luego mostrarselo al Cliente
+        // res.json(resultado.rows);   //Con esto convertiremos en un JSON todo lo que está siendo guardado en la BD, para luego mostrarselo al Cliente
+        res.send("Hola Mundo :D");
     }catch (error){
         next(error);
     }
