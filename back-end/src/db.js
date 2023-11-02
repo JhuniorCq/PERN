@@ -13,7 +13,3 @@ const pool = new Pool({ //Dentro de los () va un Objeto para Configurar a qué B
 });
 
 module.exports = pool;
-
-
-
-
