@@ -31,6 +31,7 @@ router.delete('/tasks/:id', eliminarTarea);//El :id indica que ahí va un valor,
 
 router.put('/tasks/:id', modificarTarea);//El :id indica que ahí va un valor, pero aún no sabemos qué valor será. Esto se puede entender como un parámetro v:
 
+router.get('/', holaMundito);
 
 //Exportamos la variable 'router' que AHORA ya NO está vacía
 module.exports = router;

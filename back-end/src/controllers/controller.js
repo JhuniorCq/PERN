@@ -3,12 +3,20 @@
 //Importamos la conexión a la base de datos, es decir traemos a 'pool'
 const pool = require('../db');
 
+const holaMundito = async (req, res) => {
+    try {
+        res.send("Hola Mundo :D");
+    }
+    catch (err) {
+        throw err;
+    }
+}
+
 const obtenerTodasTareas = async (req, res) => {//Solicitud para obtener algo (response)
 
     try{
         const resultado = await pool.query('SELECT * FROM task');   //Con esto OBTENDREMOS lo que está siendo guardado en la Base de Datos
-        // res.json(resultado.rows);   //Con esto convertiremos en un JSON todo lo que está siendo guardado en la BD, para luego mostrarselo al Cliente
-        res.send("Hola Mundo :D");
+        res.json(resultado.rows);   //Con esto convertiremos en un JSON todo lo que está siendo guardado en la BD, para luego mostrarselo al Cliente
     }catch (error){
         next(error);
     }
