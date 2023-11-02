@@ -130,7 +130,8 @@ module.exports = {
     obtenerUnaTarea: obtenerUnaTarea,
     crearTarea: crearTarea,
     eliminarTarea: eliminarTarea,
-    modificarTarea: modificarTarea
+    modificarTarea: modificarTarea,
+    holaMundito: holaMundito
 }
 
 

@@ -13,7 +13,8 @@ const {
     obtenerUnaTarea, 
     crearTarea, 
     eliminarTarea, 
-    modificarTarea
+    modificarTarea,
+    holaMundito
 } = require('../controllers/controller');
 
 /* 
