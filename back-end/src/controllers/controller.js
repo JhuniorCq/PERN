@@ -3,12 +3,12 @@
 //Importamos la conexión a la base de datos, es decir traemos a 'pool'
 const pool = require('../db');
 
-const holaMundito = async (req, res) => {
+const holaMundito = async (req, res, next) => {
     try {
         res.send("Hola Mundoooooooooooooooooo :D");
     }
     catch (err) {
-        throw err;
+        next(error);
     }
 }
 
@@ -28,7 +28,7 @@ const obtenerTodasTareas = async (req, res) => {//Solicitud para obtener algo (r
     //res.json(result.rows[0].now);//Respondemos a la solicitud del Cliente con un json*/
 };
 
-const obtenerUnaTarea = async (req, res) => {    //Solicitud para Obener algo en específico (response)
+const obtenerUnaTarea = async (req, res, next) => {    //Solicitud para Obener algo en específico (response)
 
     try {
         const {id} = req.params;//El req.params es un Objeto que contiene el VALOR que yo le ponga luego del 'tasks' http://localhost:3000/tasks/"Este valor"
@@ -51,7 +51,7 @@ const obtenerUnaTarea = async (req, res) => {    //Solicitud para Obener algo en
     }
 };
 
-const crearTarea = async (req, res) => {   //Crear algo (response)
+const crearTarea = async (req, res, next) => {   //Crear algo (response)
     const {titulo, descripcion} = req.body; //Esto nos permite conocer la información que nos envía el cliente
 
     //INSERTAR DATOS en la tabla 'task' de la BD
@@ -77,7 +77,7 @@ const crearTarea = async (req, res) => {   //Crear algo (response)
     }
 };
 
-const eliminarTarea = async (req, res) => {  //Eliminar una Cosa (response)
+const eliminarTarea = async (req, res, next) => {  //Eliminar una Cosa (response)
     try {
         const {id} = req.params;
         
@@ -102,7 +102,7 @@ const eliminarTarea = async (req, res) => {  //Eliminar una Cosa (response)
     }
 }
 
-const modificarTarea = async (req, res) => {   //Modificar algo (response)
+const modificarTarea = async (req, res, next) => {   //Modificar algo (response)
     try {
         const {id} = req.params;
         const {titulo, descripcion} = req.body;

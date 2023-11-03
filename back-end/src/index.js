@@ -4,6 +4,9 @@ const express = require('express');
 //Importar morgan
 const morgan = require('morgan');
 
+//Importo cors
+const cors = require('cors');
+
 //Importar archivo 'routes.js' -> y se Importará la varible 'router' exportada en 'route.js'
 const routes = require('./routes/routes');
 
@@ -12,6 +15,9 @@ const app = express();
 
 //Defino un puerto
 const port = 3000;
+
+//Con cors puedes definir qué orígenes, métodos HTTP y encabezados se permiten en las solicitudes entrantes
+app.use(cors());
 
 //Usando morgan para que nos aparezca por Consola el tipo de Solicitud que estamos recibiendo desde el Cliente
 app.use(morgan('dev'));
