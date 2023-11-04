@@ -7,7 +7,7 @@ const holaMundito = async (req, res, next) => {
     try {
         res.send("Hola Mundoooooooooooooooooo :D");
     }
-    catch (err) {
+    catch (error) {
         next(error);
     }
 }
